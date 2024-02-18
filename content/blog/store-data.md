@@ -30,12 +30,7 @@ onMounted(() => {
 })
 
 function filterType() {
-  const peopleWithType = []
-  people.value.forEach((person) => {
-    if (type.value === person.type)
-      peopleWithType.push(person)
-  })
-  return peopleWithType
+  return people.value.filter(item => item.type === type.value)
 }
 </script>
 
@@ -81,20 +76,13 @@ import axios from 'axios'
 
 export const usePeople = defineStore('people', {
   state: () => ({
-    	people: null
+    people: null
   }),
   action: {
-    filterType(type) {
-      if (this.people == null) {
-        axios.get('api/people')
-             		 .then(d => this.people = d.data)
-      }
-      const peopleWithType = []
-       		this.people.forEach((person) => {
-        if (type === person.type)
-          peopleWithType.push(person)
-        	})
-        	return peopleWithType
+    async filterType(type) {
+      if (this.people === null)
+        this.people = await axios.get('api/people')
+      return this.people.filter(item => item.type === type)
     }
   }
 })
@@ -110,20 +98,16 @@ import axios from 'axios'
 
 export const usePeople = defineStore('people', {
   state: () => ({
-    	people: null
+    people: null
   }),
   action: {
-    init() {
-      return axios.get('api/people').then(d => this.people = d.data)
+    async init() {
+      this.people = await axios.get('api/people')
     },
-    filterType(type) {
-      this.init()
-      const peopleWithType = []
-      this.people.forEach((person) => {
-        if (type === person.type)
-          peopleWithType.push(person)
-      })
-      return peopleWithType
+    async filterType(type) {
+      if (this.people === null)
+        await this.init()
+      return this.people.filter(item => item.type === type)
     }
   }
 })

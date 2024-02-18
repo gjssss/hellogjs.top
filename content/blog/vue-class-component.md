@@ -6,6 +6,7 @@ date: 2023-03-24T00:00:00.000+08:00
 ## 🤓介绍
 
 对于每一个组件可以相当于一个对象，不同类型的组件也会有相同的属性，可以通过继承的方式，从基础Base组件抽象到高级组件，如果使用面向对象的思想和继承的方式来编写组件将大大减少工作量。
+
 <!-- more -->
 
 ## :chestnut:举个栗子
@@ -16,9 +17,9 @@ date: 2023-03-24T00:00:00.000+08:00
 
 这个例子中编辑器的组件不仅有在展示栏里的预览，还有在编辑器内的显示，还需要再控制栏里渲染控制它自身属性的表单。这么看来它一共有三种渲染的内容：
 
-* 首先在展示栏的预览很容易实现，因为它只需要是静态的呆在那里就好，可以设计成类的静态变量或者方法，我叫它preview。
-* 在编辑器内显示的部分可能有点难以入手，而且他的设计必须是可以被继承的子代修改，当然并不是全部修改（如果全部修改那么和单独写组件有啥区别）。举一个例子就是在点击组件时，所有组件都有一个点击时会使当前组件被选中的事件，那它就可以放到基类里，我叫它component。
-* 最后的在控制栏渲染更改组件属性的表单，这个渲染表单的实际上需要一个生成函数将组件可更改的属性编译成可以渲染表单的数据，今天我们先简单的就显示一下组件名字吧，我叫它form。（其实原理是一样的，可以显示名字则说明可以访问到组件实例，根据实例里的数据渲染表单自然也不在话下）
+- 首先在展示栏的预览很容易实现，因为它只需要是静态的呆在那里就好，可以设计成类的静态变量或者方法，我叫它preview。
+- 在编辑器内显示的部分可能有点难以入手，而且他的设计必须是可以被继承的子代修改，当然并不是全部修改（如果全部修改那么和单独写组件有啥区别）。举一个例子就是在点击组件时，所有组件都有一个点击时会使当前组件被选中的事件，那它就可以放到基类里，我叫它component。
+- 最后的在控制栏渲染更改组件属性的表单，这个渲染表单的实际上需要一个生成函数将组件可更改的属性编译成可以渲染表单的数据，今天我们先简单的就显示一下组件名字吧，我叫它form。（其实原理是一样的，可以显示名字则说明可以访问到组件实例，根据实例里的数据渲染表单自然也不在话下）
 
 ## :champagne: 开始启航！
 
@@ -27,29 +28,31 @@ date: 2023-03-24T00:00:00.000+08:00
 `preview`
 
 ```vue
-<template>
-	<button-preview></button-preview>
-	<img-preview></img-preview>
-</template>
 <script setup>
-    /*   不管怎么样，不需要获取到组件类的实例，直接使用类变量   */
-    const buttonPreview = Button.preview
-    const imgPreview = Img.preview
+/*   不管怎么样，不需要获取到组件类的实例，直接使用类变量   */
+const buttonPreview = Button.preview
+const imgPreview = Img.preview
 </script>
+
+<template>
+  <button-preview />
+  <img-preview />
+</template>
 ```
 
 `component`
 
 ```vue
-<template>
-	<button-component></button-component>
-	<img-component></img-component>
-</template>
 <script setup>
-    /*   不管怎么样获取到组件类的实例   */
-    const buttonComponent = button.render
-    const imgComponent = img.render
+/*   不管怎么样获取到组件类的实例   */
+const buttonComponent = button.render
+const imgComponent = img.render
 </script>
+
+<template>
+  <button-component />
+  <img-component />
+</template>
 ```
 
 `form`上面说了先不讨论渲染出来表单，我们先渲染一个名字`button.name`和`img.name`
@@ -79,13 +82,15 @@ export class Base {
         this._render()()
       )
     })
-	// 定义组件名字
+    // 定义组件名字
     this.name = 'Base'
   }
+
   // 同上，看解释
   _render() {
     return () => h('div', this.props)
   }
+
   // 类getter获取到组件预览
   static get preview() {
     return h('div', {}, 'Base')
@@ -93,7 +98,7 @@ export class Base {
 }
 ```
 
-最关键的一步就是获取到组件在编辑器中渲染的组件了，也就是上面的render。可以发现在API中是直接使用`button.render`调用的，多编写一层computed的原因首先是computed可以缓存return的内容，在内容没有改变的时候就不会重新生成，第二个原因是在继承Base进行重写渲染函数的时候，只需要修改_render()函数的内容，在子组件里不需要管render就可以使用了，并且在render内还加了一层div用来响应点击时切换选中组件的复用逻辑。
+最关键的一步就是获取到组件在编辑器中渲染的组件了，也就是上面的render。可以发现在API中是直接使用`button.render`调用的，多编写一层computed的原因首先是computed可以缓存return的内容，在内容没有改变的时候就不会重新生成，第二个原因是在继承Base进行重写渲染函数的时候，只需要修改\_render()函数的内容，在子组件里不需要管render就可以使用了，并且在render内还加了一层div用来响应点击时切换选中组件的复用逻辑。
 
 看一下继承Base类的Button类就可以知道为什么这么设计
 
@@ -108,52 +113,54 @@ export class Button extends Base {
 
     this.name = 'button'
   }
+
   _render() {
     return () => h(NButton, this.props, () => this.content.value)
   }
+
   static get preview() {
     return h(NButton, { type: 'default' }, () => '按钮')
   }
 }
 ```
 
-可以看到我们只需要将额外的option加入到响应的props中，并且编写我们自己的_render()函数就可以完成组件的继承
+可以看到我们只需要将额外的option加入到响应的props中，并且编写我们自己的\_render()函数就可以完成组件的继承
 
 一个简单的例子来验证我们的成果！⭐
 
 ```vue
-<template>
-	<button-component></button-component>
-</template>
-
 <script setup>
-    const button = new Button(
-        {
-            style: {
-                padding: '10px',
-                color: 'blue',
-            },
-            class: ['trans-all'],
-            onclick: () => {
-                button.props.type = 'warning'
-                button.props.style.padding = '20px'
-                button.props.style.color = 'gray'
-                button.props.style['margin'] = '10px'
-                button.props.class.push('fs-xl')
-            },
-        },
-        { type: 'primary' }
-    )
-    const buttonComponent = button.render
+const button = new Button(
+  {
+    style: {
+      padding: '10px',
+      color: 'blue',
+    },
+    class: ['trans-all'],
+    onclick: () => {
+      button.props.type = 'warning'
+      button.props.style.padding = '20px'
+      button.props.style.color = 'gray'
+      button.props.style.margin = '10px'
+      button.props.class.push('fs-xl')
+    },
+  },
+  { type: 'primary' }
+)
+const buttonComponent = button.render
 </script>
 
+<template>
+  <button-component />
+</template>
+
 <style>
-    .trans-all{
-        transition: 'all 0.225s ease-in-out'
-    }
-    .fs-xl{
-        'font-size': '26px'
-    }
+.trans-all {
+  transition: 'all 0.225s ease-in-out';
+}
+.fs-xl {
+  'font-size':26px;
+}
 </style>
 ```
 
