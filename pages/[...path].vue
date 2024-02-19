@@ -7,7 +7,7 @@ const { data, error } = useAsyncData(path, () => queryContent(path).findOne())
 </script>
 
 <template>
-  <article class="px-4 prose">
+  <article class="prose px-4">
     <div v-if="error">
       404 Not Found
     </div>

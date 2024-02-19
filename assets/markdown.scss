@@ -1,85 +1,85 @@
 .prose {
-	$headline-gap: 0.5rem; // h5 = 1rem + 0.2rem
-	$headline-level: 3;
+  $headline-gap: 0.5rem; // h5 = 1rem + 0.2rem
+  $headline-level: 3;
 
-	$ul-gap: 4ch;
-	$ul-prefix-size: 0.3rem;
-	$blockquote-gap: 1rem;
-	$blockquote-border: 0.25rem;
+  $ul-gap: 4ch;
+  $ul-prefix-size: 0.3rem;
+  $blockquote-gap: 1rem;
+  $blockquote-border: 0.25rem;
 
-	@for $i from 1 through $headline-level {
-		h#{$i} {
-			font-size: 1rem + ($headline-level + 1 - $i) * $headline-gap;
-			font-weight: bolder;
-		}
-	}
+  @for $i from 1 through $headline-level {
+    h#{$i} {
+      font-size: 1rem + ($headline-level + 1 - $i) * $headline-gap;
+      font-weight: bolder;
+    }
+  }
 
-	h1 {
-		margin: 1.5rem 0;
-	}
+  h1 {
+    margin: 1.5rem 0;
+  }
 
-	h2 {
-		margin-top: 2rem;
-		margin-bottom: 1rem;
-	}
+  h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
 
-	h3 {
-		margin-top: 1rem;
-		margin-bottom: 0.5rem;
-	}
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
 
-	p,
-	blockquote {
-		margin-bottom: 1.5rem;
-	}
+  p,
+  blockquote {
+    margin-bottom: 1.5rem;
+  }
 
-	ul > li {
-		margin-left: $ul-gap;
-		position: relative;
-		&::before {
-			content: '';
-			position: absolute;
-			width: $ul-prefix-size;
-			height: $ul-prefix-size;
-			border-radius: 50%;
-			background-color: var(--dark-8);
-			left: -1em;
-			top: 0.5em;
-			transform: translateX(50%);
-		}
-	}
+  ul > li {
+    margin-left: $ul-gap;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      width: $ul-prefix-size;
+      height: $ul-prefix-size;
+      border-radius: 50%;
+      background-color: var(--dark-8);
+      left: -1em;
+      top: 0.5em;
+      transform: translateX(50%);
+    }
+  }
 
-	ol {
-		list-style-type: decimal;
-		margin-left: $ul-gap;
-	}
+  ol {
+    list-style-type: decimal;
+    margin-left: $ul-gap;
+  }
 
-	strong {
-		font-weight: bolder;
-	}
+  strong {
+    font-weight: bolder;
+  }
 
-	p > a {
-		border-bottom: 1px solid var(--light-4);
-		color: var(--dark);
-	}
+  p > a {
+    border-bottom: 1px solid var(--light-4);
+    color: var(--dark);
+  }
 
-	code:not(:where(pre > code)) {
-		&::before {
-			content: '`';
-		}
-		&::after {
-			content: '`';
-		}
-	}
+  code:not(:where(pre > code)) {
+    &::before {
+      content: '`';
+    }
+    &::after {
+      content: '`';
+    }
+  }
 
-	pre {
-		border-radius: 0.375rem;
-		padding: 0.8rem 1.2rem;
-		background-color: var(--light-3);
-	}
+  pre {
+    border-radius: 0.375rem;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--light-3);
+  }
 
-	blockquote {
-		padding-left: $blockquote-gap;
-		border-left: $blockquote-border solid var(--light-4);
-	}
+  blockquote {
+    padding-left: $blockquote-gap;
+    border-left: $blockquote-border solid var(--light-4);
+  }
 }
