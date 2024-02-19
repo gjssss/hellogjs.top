@@ -1,6 +1,5 @@
-const colorMode = useColorMode()
-
 function toggle() {
+  const colorMode = useColorMode()
   colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'
 }
 /**
@@ -8,6 +7,7 @@ function toggle() {
  * @see https://github.com/vuejs/vitepress/pull/2347
  */
 export function toggleDark(event: MouseEvent) {
+  const colorMode = useColorMode()
   // @ts-expect-error experimental API
   const isAppearanceTransition = document.startViewTransition
     && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
