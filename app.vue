@@ -7,7 +7,7 @@
     <header>
       <Navigation />
     </header>
-    <main>
+    <main class="ma max-w-65ch">
       <NuxtPage />
     </main>
     <div id="__transition" />
@@ -15,22 +15,5 @@
 </template>
 
 <style>
-html,
-body,
-#__nuxt {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
 
-html.dark {
-  background: #222;
-  color: white;
-  color-scheme: dark;
-}
-html.light {
-  background: #ddd;
-  color: black;
-  color-scheme: light;
-}
 </style>

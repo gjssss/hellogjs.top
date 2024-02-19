@@ -1,0 +1,60 @@
+@use 'sass:color';
+
+html,
+body,
+#__nuxt {
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background: var(--bg-color);
+	color: var(--text-color);
+}
+
+html.dark {
+	color-scheme: dark;
+}
+
+html.light {
+	color-scheme: light;
+}
+
+// color
+html {
+	$dark: #000;
+	$light: #fff;
+
+	--white: #{$light};
+	--black: #{$dark};
+
+	--dark: #{$dark};
+	@for $i from 0 through 15 {
+		--dark-#{$i}: #{lighten($dark, calc(100% / 15) * $i)};
+	}
+	@for $i from 0 through 15 {
+		--light-#{$i}: #{darken($light, calc(100% / 15) * $i)};
+	}
+
+	--text-color: var(--dark-1);
+	--bg-color: var(--light-2);
+}
+html.dark {
+	$dark: #fff;
+	$light: #000;
+
+	--white: #{$light};
+	--black: #{$dark};
+
+	--dark: #{$dark};
+	@for $i from 0 through 15 {
+		--dark-#{$i}: #{darken($dark, calc(100% / 15) * $i)};
+	}
+	@for $i from 0 through 15 {
+		--light-#{$i}: #{lighten($light, calc(100% / 15) * $i)};
+	}
+
+	--text-color: var(--dark-1);
+	--bg-color: var(--light-2);
+}

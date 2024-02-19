@@ -7,7 +7,7 @@ const { data, error } = useAsyncData(path, () => queryContent(path).findOne())
 </script>
 
 <template>
-  <main class="ma max-w-65ch">
+  <article class="px-4 prose">
     <div v-if="error">
       404 Not Found
     </div>
@@ -17,5 +17,5 @@ const { data, error } = useAsyncData(path, () => queryContent(path).findOne())
       </div>
       <ContentRendererMarkdown v-else :value="data" />
     </ContentRenderer>
-  </main>
+  </article>
 </template>

@@ -19,6 +19,8 @@ export default defineNuxtConfig({
   css: [
     '@unocss/reset/tailwind.css',
     './assets/transition.scss',
+    './assets/markdown.scss',
+    './assets/style.scss',
   ],
 
   colorMode: {
