@@ -72,6 +72,7 @@ export const slideToggleDark = ref({
   },
   onClick: () => {
     const el = document.getElementById('__transition')!
+    el.style.opacity = '1'
     el.classList.add('active')
     setTimeout(() => {
       toggle()
