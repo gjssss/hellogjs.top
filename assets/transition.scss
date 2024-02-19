@@ -1,0 +1,44 @@
+$z-index: 10;
+
+#__transition {
+  z-index: $z-index;
+  width: 200vw;
+  height: 200vh;
+  position: fixed;
+  top: 0;
+  left: -200vw;
+  clip-path: polygon(0 0, 50% 0, 100% 50%, 0 50%);
+  mix-blend-mode: difference;
+  background: #fff;
+  transition: transform 0.3s ease-in-out;
+}
+#__transition.hover {
+  transform: translateX(100vw);
+}
+#__transition.active {
+  transform: translateX(200vw);
+}
+
+img,
+video,
+picture {
+  z-index: $z-index + 1;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+  z-index: 1;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
+.dark::view-transition-old(root) {
+  z-index: 9999;
+}
+.dark::view-transition-new(root) {
+  z-index: 1;
+}
