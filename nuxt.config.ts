@@ -72,6 +72,13 @@ export default defineNuxtConfig({
     navigation: {
       fields: ['date', 'title', 'duration'],
     },
+    highlight: {
+      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'python'],
+      theme: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+    },
     defaultLocale: 'zh-cn',
     ignores: [
       'draft',

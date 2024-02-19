@@ -108,7 +108,18 @@ and code blocks:
 >
 > Here's some example code:
 >
->     return shell_exec("echo $input | $markdown_script");
+>       return shell_exec("echo $input | $markdown_script");
+
+```ts
+interface person {
+  name: string
+  age: number
+}
+const p: person = {
+  name: 'hello',
+  age: 18
+}
+```
 
 Any decent text editor should make email-style quoting easy. For
 example, with BBEdit, you can make a selection and choose Increase

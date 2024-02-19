@@ -18,7 +18,7 @@ date: 2023-03-25T00:00:00.000+08:00
 
 模块结构为
 
-```tree
+```
 LOW CODE\SRC\SIDE-BAR
 |   side-bar.vue # 侧边栏
 |   side-com.vue # 组件预览
