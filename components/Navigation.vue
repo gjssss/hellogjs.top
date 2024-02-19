@@ -15,6 +15,9 @@ const colorMode = useColorMode()
       <NuxtLink v-for="item in navigation" :key="item._id" :href="item._path">
         {{ item.title }}
       </NuxtLink>
+      <nuxt-link to="https://github.com/gjssss" target="_blank">
+        <div class="i-carbon-logo-github cursor-pointer text-5" />
+      </nuxt-link>
       <div v-bind="slideToggleDark">
         <Transition name="spin" mode="out-in">
           <div v-if="colorMode.preference === 'dark'" class="i-carbon-moon cursor-pointer text-5" />
