@@ -1,13 +1,5 @@
 @use 'sass:color';
 
-html,
-body,
-#__nuxt {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
 html {
   background: var(--bg-color);
   color: var(--text-color);

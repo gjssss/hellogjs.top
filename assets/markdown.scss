@@ -28,6 +28,11 @@
     margin-bottom: 0.5rem;
   }
 
+  hr {
+    border-color: var(--light-8);
+    border-style: dashed;
+  }
+
   p,
   blockquote {
     margin-bottom: 1.5rem;
@@ -76,6 +81,8 @@
     border-radius: 0.375rem;
     padding: 0.8rem 1.2rem;
     background-color: var(--light-3);
+    overflow-x: auto;
+    margin-bottom: 0.8rem;
   }
 
   blockquote {
