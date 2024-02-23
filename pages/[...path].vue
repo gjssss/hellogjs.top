@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const route = useRoute()
-const paths = route.params.path || ['']
+const paths = (route.params as any).path || ['']
 paths.unshift('')
 const path = paths.join('/')
 const { data, error } = useAsyncData(path, () => queryContent(path).findOne())
