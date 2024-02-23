@@ -3,18 +3,9 @@
 </script>
 
 <template>
-  <div class="relative min-h-screen flex flex-col font-sans">
-    <header>
-      <Navigation />
-    </header>
-    <main class="mxa flex-1 <sm:w-90% sm:max-w-65ch">
-      <NuxtPage />
-    </main>
-    <footer class="mxa <sm:w-90% sm:max-w-65ch">
-      <FooterContent />
-    </footer>
-    <div id="__transition" />
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <style>

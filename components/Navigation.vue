@@ -15,6 +15,9 @@ const colorMode = useColorMode()
       <NuxtLink v-for="item in navigation" :key="item._id" :href="item._path">
         {{ item.title }}
       </NuxtLink>
+      <NuxtLink href="/resume">
+        简历
+      </NuxtLink>
       <nuxt-link to="https://github.com/gjssss" target="_blank">
         <div class="i-carbon-logo-github cursor-pointer text-5" />
       </nuxt-link>
