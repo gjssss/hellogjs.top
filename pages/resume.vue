@@ -28,7 +28,7 @@ definePageMeta({
         </NuxtLink>
       </div>
     </div>
-    <div class="flex-1 p-2rem">
+    <div class="flex-1 lg:p-2rem">
       <h4>个人总结</h4>
       <ul>
         <li>
@@ -152,6 +152,7 @@ definePageMeta({
   ul > li {
     position: relative;
     margin-bottom: 0.4rem;
+    margin-left: 1rem;
     &::before {
       content: '';
       position: absolute;
