@@ -5,7 +5,10 @@ definePageMeta({
 </script>
 
 <template>
-  <div class="resume mxa flex <lg:w-90% lg:w-80% lg:flex-row <lg:flex-col">
+  <div class="resume relative mxa flex <lg:w-90% lg:w-80% lg:flex-row <lg:flex-col">
+    <div class="absolute right-0 top-0 p-2rem">
+      <ThemeSwitch />
+    </div>
     <div class="py-3rem text-center <lg:w-full lg:w-20rem">
       <h3>GJSSSS</h3>
       <div class="mt-.2rem c-$dark-8">
@@ -16,7 +19,7 @@ definePageMeta({
           gaojinsong2010@gmail.com
         </NuxtLink>
       </div>
-      <div class="mt-1rem flex justify-center gap-.5rem">
+      <div class="mt-1rem flex items-center justify-center gap-.5rem">
         <NuxtLink class="icon" to="https://github.com/gjssss" target="_blank">
           <div class="i-carbon-logo-github" />
         </NuxtLink>
