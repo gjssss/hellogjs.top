@@ -7,10 +7,10 @@
     <header>
       <Navigation />
     </header>
-    <main class="mxa flex-1 <sm:w-90% sm:max-w-65ch">
+    <main class="mxa flex-1 <sm:w-90% lg:max-w-100ch sm:max-w-65ch">
       <slot />
     </main>
-    <footer class="mxa <sm:w-90% sm:max-w-65ch">
+    <footer class="mxa <sm:w-90% lg:max-w-100ch sm:max-w-65ch">
       <FooterContent />
     </footer>
     <div id="__transition" />
