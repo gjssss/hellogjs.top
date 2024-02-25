@@ -3,7 +3,10 @@ import dayjs from 'dayjs'
 
 const { data, error } = await useAsyncData('blog-list', async () => {
   const data = await fetchContentNavigation(queryContent('/blog'))
-  return data[0].children?.filter(item => item._path !== '/blog')
+  return data[0]
+    .children
+    ?.filter(item => item._path !== '/blog')
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 })
 </script>
 
