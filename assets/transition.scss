@@ -3,11 +3,11 @@ $z-index: 10;
 #__transition {
   z-index: $z-index;
   width: 200vw;
-  height: 200vh;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: -200vw;
-  clip-path: polygon(0 0, 50% 0, 100% 50%, 0 50%);
+  clip-path: polygon(0 0, 50% 0, 100% 100%, 0 100%);
   mix-blend-mode: difference;
   background: #fff;
   transition: transform 0.3s ease-in-out;
@@ -23,6 +23,7 @@ img,
 video,
 picture {
   z-index: $z-index + 1;
+  position: relative;
 }
 
 ::view-transition-old(root),
