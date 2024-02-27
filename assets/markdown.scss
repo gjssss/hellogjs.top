@@ -85,7 +85,6 @@
   pre {
     border-radius: 0.375rem;
     padding: 0.8rem 1.2rem;
-    padding-top: calc(0.8rem + 1rem);
     background-color: var(--light-3);
     overflow-x: auto;
     margin-bottom: 0.8rem;
@@ -94,26 +93,6 @@
     code span {
       font-family: 'Noto Sans Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
         'Courier New', monospace;
-    }
-
-    .language {
-      position: absolute;
-      transform: translateY(-100%);
-      color: var(--dark-8);
-      cursor: default;
-    }
-
-    .copy {
-      position: absolute;
-      right: 1.2rem;
-      top: 0.8rem;
-      opacity: 0;
-      transition: opacity 300ms ease-in-out;
-      cursor: pointer;
-    }
-
-    &:hover .copy {
-      opacity: 1;
     }
   }
 

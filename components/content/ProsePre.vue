@@ -52,11 +52,49 @@ function showMsg() {
 </script>
 
 <template>
-  <pre :class="$props.class" class="font-mono"><div class="language">{{ language }}</div><div v-if="copyTrigger" class="copy">{{ copyMsg }}</div><div v-else class="i-carbon-copy copy" title="copy code" @click="copyHandle" /><slot /></pre>
+  <div class="code">
+    <div class="language op-trans">
+      {{ language }}
+    </div>
+    <div v-if="copyTrigger" class="copy">
+      {{ copyMsg }}
+    </div>
+    <div v-else class="i-carbon-copy copy op-trans" title="copy code" @click="copyHandle" />
+    <pre :class="$props.class" class="font-mono"><slot /></pre>
+  </div>
 </template>
 
 <style>
 pre code .line {
   display: block;
+}
+.code {
+  position: relative;
+  padding-top: 1.2rem;
+}
+.code .language {
+  position: absolute;
+  left: 1.2rem;
+  font-size: 0.8rem;
+  cursor: default;
+  z-index: 1;
+}
+
+.code .copy {
+  position: absolute;
+  right: 1.2rem;
+  top: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+@media (any-hover: hover) {
+  .op-trans {
+    transition: opacity 300ms ease-in-out;
+    opacity: 0;
+  }
+  .code:hover .op-trans {
+    opacity: 1;
+  }
 }
 </style>
