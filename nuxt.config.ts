@@ -73,7 +73,7 @@ export default defineNuxtConfig({
       fields: ['date', 'title', 'duration'],
     },
     highlight: {
-      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'mdc', 'md', 'yaml', 'python', 'scss'],
+      langs: ['json', 'js', 'ts', 'html', 'css', 'vue', 'shell', 'yaml', 'python', 'scss'],
       theme: {
         default: 'github-light',
         light: 'github-light',
