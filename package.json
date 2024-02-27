@@ -24,6 +24,7 @@
     "@iconify-json/twemoji": "^1.1.15",
     "@nuxtjs/color-mode": "^3.3.2",
     "@pinia/nuxt": "^0.5.1",
+    "@shikijs/twoslash": "^1.1.7",
     "@types/lodash-es": "^4.17.12",
     "@unocss/eslint-config": "^0.58.5",
     "@unocss/nuxt": "^0.58.5",

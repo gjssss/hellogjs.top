@@ -59,7 +59,7 @@ function showMsg() {
     <div v-if="copyTrigger" class="copy">
       {{ copyMsg }}
     </div>
-    <div v-else class="i-carbon-copy copy op-trans" title="copy code" @click="copyHandle" />
+    <div v-else class="copy op-trans i-carbon-copy" title="copy code" @click="copyHandle" />
     <pre :class="$props.class" class="font-mono"><slot /></pre>
   </div>
 </template>

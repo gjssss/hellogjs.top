@@ -1,5 +1,7 @@
 <script setup lang="ts">
-
+useHead({
+  title: 'GJSSSS | 简历',
+})
 </script>
 
 <template>
