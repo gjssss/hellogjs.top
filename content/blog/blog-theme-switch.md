@@ -53,7 +53,7 @@ date: 2024-02-25T00:00:00.000+08:00
 
 在Nuxt中使用`color-mode`来切换主题，在切换时需要使用主题图标的一些鼠标事件回调来控制蒙层的行为。
 
-```ts
+```ts twoslash
 function toggle() {
   const colorMode = useColorMode()
   colorMode.preference = colorMode.preference === 'dark' ? 'light' : 'dark'

@@ -1,3 +1,5 @@
+import { ScriptTarget } from 'typescript'
+
 export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
@@ -5,6 +7,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     'nuxt-module-eslint-config',
+    'nuxt-content-twoslash',
     '@nuxt/content',
   ],
 
@@ -84,5 +87,11 @@ export default defineNuxtConfig({
     ignores: [
       'draft',
     ],
+  },
+  twoslash: {
+    compilerOptions: {
+      lib: ['ES5', 'ES6', 'ESNext', 'DOM'],
+      target: ScriptTarget.ES2016,
+    },
   },
 })
