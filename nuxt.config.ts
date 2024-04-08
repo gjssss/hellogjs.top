@@ -1,5 +1,3 @@
-import { ScriptTarget } from 'typescript'
-
 export default defineNuxtConfig({
   modules: [
     '@vueuse/nuxt',
@@ -90,8 +88,7 @@ export default defineNuxtConfig({
   },
   twoslash: {
     compilerOptions: {
-      lib: ['ES5', 'ES6', 'ESNext', 'DOM'],
-      target: ScriptTarget.ES2016,
+      lib: ['DOM', 'dom'],
     },
   },
 })
