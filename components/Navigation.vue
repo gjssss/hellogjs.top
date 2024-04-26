@@ -14,9 +14,9 @@ const { data: navigation } = await useAsyncData('nav', async () => {
       <NuxtLink v-for="item in navigation" :key="item._id" :href="item._path">
         {{ item.title }}
       </NuxtLink>
-      <NuxtLink href="/resume" target="_blank">
+      <!-- <NuxtLink href="/resume" target="_blank">
         简历
-      </NuxtLink>
+      </NuxtLink> -->
       <nuxt-link to="https://github.com/gjssss" target="_blank">
         <div class="i-carbon-logo-github cursor-pointer text-5" />
       </nuxt-link>
