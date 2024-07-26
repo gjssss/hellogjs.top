@@ -86,9 +86,9 @@ export default defineNuxtConfig({
       'draft',
     ],
   },
+
   twoslash: {
-    compilerOptions: {
-      lib: ['DOM', 'dom'],
-    },
   },
+
+  compatibilityDate: '2024-07-26',
 })
