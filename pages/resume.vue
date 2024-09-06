@@ -32,8 +32,7 @@ definePageMeta({
       <h4>个人总结</h4>
       <ul>
         <li>
-          掌握HTML、CSS，熟练使用JavaScript、TypeScript、Vue、Nuxt、Uniapp，了解Sass、Less、UnoCSS，有丰富的小
-          程序和Web端开发经验。
+          掌握HTML、CSS，熟练使用JavaScript、TypeScript、Vue、Nuxt、Uniapp，了解Sass、Less、UnoCSS，有丰富的小程序和Web端开发经验。
         </li>
         <li>
           熟练使用ChatGPT工具和Git版本控制以及GitHub。
@@ -54,16 +53,18 @@ definePageMeta({
       <h4>教育背景</h4>
       <div><strong>郑州大学</strong><code>211</code><code>双一流</code></div>
       <div>计算机科学与技术 <small>2019年09月 - 2023年06月</small></div>
+      <div><strong>北京邮电大学</strong><code>211</code><code>双一流</code></div>
+      <div>网络与信息安全 <small>2024年09月 - 至今</small></div>
       <h4>项目经历</h4>
-      <div><strong>EggCampus</strong></div>
+      <div><strong>巢聚</strong></div>
       <ul>
-        <li>技术栈：Uniapp+Vue3+JavaScript+Vite+Pinia</li>
-        <li>项目地址：微信小程序搜索EggCampus</li>
+        <li>技术栈：Uniapp+Vue3+Typescript+Vite+Pinia</li>
+        <li>项目地址：微信小程序搜索“巢聚”</li>
         <li>
-          简介：以在校生信息孤岛为需求点，以校园BBS社区论坛为导向，面向复旦大学校园的创业项目，已在微信小程序上线。 目前平台有3k学生用户，七月份日活500左右。
+          简介：以在校生、实习生和上班族的租房需求为导向，为用户提供优质房源，为房东租客提供宣传平台。
         </li>
         <li>
-          负责工作：使用预加载技术提高页面性能；使用Pinia重构项目；负责商家卡券模块、帖子列表模块、消息模块；封装实现多主题功能；负责项目后台搭建与实现。
+          负责工作：负责整套前端的搭建和编写，包括小程序端和管理后台端。小程序端负责实现各种需求以及设计图UI，封装和实现各种功能包括响应式函数以及代码组件；管理后台端包括权限和角色的实现、修改和显示各种信息等。
         </li>
       </ul>
       <hr>
