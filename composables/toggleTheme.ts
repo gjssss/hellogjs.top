@@ -8,7 +8,6 @@ function toggle() {
  */
 export function toggleDark(event: MouseEvent) {
   const colorMode = useColorMode()
-  // @ts-expect-error experimental API
   const isAppearanceTransition = document.startViewTransition
     && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
