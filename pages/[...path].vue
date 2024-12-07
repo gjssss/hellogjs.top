@@ -6,7 +6,7 @@ const path = paths.join('/')
 const { data, error } = await useAsyncData(path, () => queryContent(path).findOne())
 
 useHead({
-  title: data.value?.title ? 'gjssss' | ${data.value.title}` : 'gjssss',
+  title: data.value?.title ? `gjssss | ${data.value.title}` : 'gjssss',
 })
 </script>
 
